@@ -168,20 +168,25 @@ def fetch_weather() -> WeatherReport:
 
 
 def format_morning_report(report: WeatherReport) -> str:
-    """Format weather details as a short Telegram-friendly morning report."""
+    """Format weather details as an attractive Telegram morning report."""
     try:
         observed_at = datetime.fromisoformat(report.observed_at).strftime("%I:%M %p").lstrip("0")
     except ValueError:
         observed_at = report.observed_at
 
     return (
-        f"GOOD MORNING !{Eswar['name']}!\n\n"
-        f"☀️ Weather report ({observed_at})\n"
-        f"Condition: {report.condition}\n"
-        f"Temperature: {report.temperature_c:.1f}°C\n"
-        f"Humidity: {report.humidity_percent}%\n"
-        f"Wind: {report.wind_speed_kmh:.1f} km/h\n"
-        f"Rain probability: {report.rain_probability_percent}%"
+        "🌅 *GOOD MORNING, ESWAR!* ☀️\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "📍 *Guntur, Andhra Pradesh*\n\n"
+        "🌤️ *TODAY'S WEATHER*\n"
+        f"☁️ Condition: *{report.condition}*\n"
+        f"🌡️ Temperature: *{report.temperature_c:.1f}°C*\n"
+        f"💧 Humidity: *{report.humidity_percent}%*\n"
+        f"💨 Wind: *{report.wind_speed_kmh:.1f} km/h*\n"
+        f"🌧️ Rain Chance: *{report.rain_probability_percent}%*\n\n"
+        f"🕐 Updated: {observed_at}\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "✨ *Have a wonderful day!* ✨"
     )
 
 
