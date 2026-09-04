@@ -175,7 +175,7 @@ def format_morning_report(report: WeatherReport) -> str:
         observed_at = report.observed_at
 
     return (
-        f"Good morning from {GUNTUR['name']}!\n\n"
+        f"GOOD MORNING !{Eswar['name']}!\n\n"
         f"☀️ Weather report ({observed_at})\n"
         f"Condition: {report.condition}\n"
         f"Temperature: {report.temperature_c:.1f}°C\n"
